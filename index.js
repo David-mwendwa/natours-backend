@@ -73,7 +73,7 @@ app.patch('/api/v1/tours/:id', (req, res) => {
 });
 
 app.delete('/api/v1/tours/:id', (req, res) => {
-  if (+req.params.id > tours.length) {
+  if (Number(req.params.id) > tours.length) {
     return res.status(404).json({
       status: "fail",
       message: "Invalid ID"
