@@ -85,7 +85,7 @@ app.delete('/api/v1/tours/:id', (req, res) => {
   })
 })
 
-const port = 5000;
+const port = 3000;
 app.listen(port, () => {
   console.log(`server listening on port ${port}`);
 });
