@@ -73,7 +73,7 @@ app.patch('/api/v1/tours/:id', (req, res) => {
 });
 
 app.delete('/api/v1/tours/:id', (req, res) => {
-  if (Number(req.params.id) > tours.length) {
+  if (+req.params.id > tours.length) {
     return res.status(404).json({
       status: "fail",
       message: "Invalid ID"
@@ -85,7 +85,7 @@ app.delete('/api/v1/tours/:id', (req, res) => {
   })
 })
 
-const port = 3000;
+const port = 5000;
 app.listen(port, () => {
   console.log(`server listening on port ${port}`);
 });
